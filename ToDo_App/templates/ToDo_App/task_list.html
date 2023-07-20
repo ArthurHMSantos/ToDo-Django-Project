@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Title</h1>
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Creation time</th>
+            <th>Completed</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td>{{ task.created_at }}</td>
+            <td>{{ task.completed }}</td>
+        </tr>
+        {% empty %}
+            <h3>No items in list</h3>
+        {% endfor %}
+</body>
+</html>

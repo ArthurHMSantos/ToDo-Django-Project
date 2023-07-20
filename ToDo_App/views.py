@@ -1,6 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import ListView, DetailView
+from .models import Task
 
 # Create your views here.
-def Home(request):
-    return HttpResponse("Hello World")
+class Home(ListView):
+    model = Task    
+    template_name = 'home.html'
+    context_object_name = 'tasks'
+    
