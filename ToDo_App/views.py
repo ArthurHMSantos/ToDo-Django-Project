@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Task
 
 # Create your views here.
@@ -10,5 +11,5 @@ class Home(ListView):
 
 class TaskDetail(DetailView):
     model = Task
-    template_name = 'task.html'
+    template_name = 'ToDo_App/task_detail.html'
     context_object_name = 'task'
