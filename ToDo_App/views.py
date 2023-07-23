@@ -1,10 +1,21 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.views import LoginView
 from .models import Task
 
 
 # Create your views here.
+
+class Login(LoginView):
+    template_name = 'ToDo_App/login.html'
+    fields = '__all__'
+    redirect_authenticated_user = True
+
+    def get_success_url(self):
+        return reverse_lazy('home')
+    
+
 class Home(ListView):
     model = Task    
     template_name = 'home.html'
@@ -33,3 +44,5 @@ class TaskDelete(DeleteView):
     model = Task
     template_name = 'ToDo_App/task_delete.html'
     success_url = reverse_lazy('home')
+
+
