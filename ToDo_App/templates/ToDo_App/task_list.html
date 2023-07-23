@@ -6,6 +6,7 @@
 </head>
 <body>
     <h1>Title</h1>
+    <a href="{% url 'task_form' %}">Add Task</a>
     <table>
         <tr>
             <th>Task</th>
@@ -14,6 +15,7 @@
         <tr>
             <td>{{ task.title }}</td>
             <td><a href="{% url 'task_detail' task.id %}">View</a></td>
+            <td><a href="{% url 'task_update' task.id %}">Update</a></td>
         </tr>
         {% empty %}
             <h3>No items in list</h3>

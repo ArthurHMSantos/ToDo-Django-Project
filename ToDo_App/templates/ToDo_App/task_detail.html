@@ -7,5 +7,16 @@
 </head>
 <body>
     <h1>Task: {{task}}</h1>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Completed</th>
+    </tr>
+    <br>
+    <tr>
+        <td>{{ task.title }}</td>
+        <td>{{ task.description }}</td>
+        <td>{{ task.completed }}</td>
+    </tr>
 </body>
 </html>
