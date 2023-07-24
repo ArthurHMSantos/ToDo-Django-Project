@@ -1,3 +1,4 @@
+from typing import Any, Dict
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -22,10 +23,17 @@ class Home(LoginRequiredMixin, ListView):
     template_name = 'home.html'
     context_object_name = 'tasks'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['tasks'] = context['tasks'].filter(user=self.request.user)
+        context['count'] = context['tasks'].filter(completed=False).count()
+        return context
+
 class TaskDetail(LoginRequiredMixin, DetailView):
     model = Task
     template_name = 'ToDo_App/task_detail.html'
     context_object_name = 'task'
+
 
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
