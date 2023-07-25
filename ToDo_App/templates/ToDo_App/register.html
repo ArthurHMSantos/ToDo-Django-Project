@@ -1,18 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-</head>
-<body>
-    <H1>Registration</H1>
 
-    <form action="" method="post">
+{% extends 'ToDo_App\main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <h1>Register</h1>
+</div>
+
+<div class="card-body">
+    <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Register">
+        <label>{{form.username.label}}</label>
+        {{form.username}}
+
+        <label>{{form.password1.label}}</label>
+        {{form.password1}}
+
+        <label>{{form.password2.label}}</label>
+        {{form.password2}}
+        <input style="margin-top:10px ;" class="button" type="submit" value="Register">
     </form>
-    <p>Already have an account? Login Here:</p><a href="{% url 'login' %}">Login</a>
-</body>
-</html>
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
+
+
+{% endblock content %}

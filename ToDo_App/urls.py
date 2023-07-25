@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.urls import path, include
 from . import views 
 from django.contrib.auth.views import LogoutView
@@ -12,5 +13,4 @@ urlpatterns = [
     path('task_form/', views.TaskCreate.as_view(), name='task_form'),
     path('task_update/<int:pk>/', views.TaskUpdate.as_view(), name='task_update'),
     path('task_delete/<int:pk>/', views.TaskDelete.as_view(), name='task_delete'),
-
 ]
