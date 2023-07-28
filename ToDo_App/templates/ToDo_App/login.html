@@ -4,13 +4,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-    <H1>login</H1>
-
+    <div class="header">
+        <H1 class="title" >Login</H1>
+        <p class="subtitle">Login into your account.</p>
+    </div>
+    <hr>
     <form action="" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+
+        {{form.username}}
+        {{form.password}}
         <input type="submit" value="login">
     </form>
+    </div>
     <p>No account? Register Here:</p><a href="{% url 'register' %}">Register</a>
 </body>
 </html>

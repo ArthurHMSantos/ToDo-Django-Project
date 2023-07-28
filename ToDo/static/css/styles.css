@@ -1,6 +1,25 @@
 body{
-    background-color: #F7B7C8;
-    color: aqua;
+    background: linear-gradient(rgba(255, 128, 161, 1), rgba(255, 79, 125, 0));
+}
+
+hr{
+    border: 2px solid black;
+    margin: 20px 0;
+}
+
+.title{
+    font-family: 'Fascinate', cursive;
+    font-size: 60px;
+    color: black;
+    opacity: 0.6;
+}
+
+.subtitle{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
 }
 
 
+input::placeholder {
+    font-family: 'Courier Prime', monospace;
+  }

@@ -8,6 +8,7 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
+from .forms import CustomLoginForm
 from .models import Task
 
 
@@ -33,7 +34,7 @@ class Register(FormView):
 
 class Login(LoginView):
     template_name = 'ToDo_App/login.html'
-    fields = '__all__'
+    authentication_form = CustomLoginForm
     redirect_authenticated_user = True
 
     def get_success_url(self):
