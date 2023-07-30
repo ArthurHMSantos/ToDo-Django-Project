@@ -1,10 +1,53 @@
 body{
-    background: linear-gradient(rgba(255, 128, 161, 1), rgba(255, 79, 125, 0));
+    background-color: #fafafa9a;
+    padding-top: 50px;
 }
 
 hr{
-    border: 2px solid black;
-    margin: 20px 0;
+    border: 1px solid #000000;
+}
+
+h3, .subtitle{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    margin: 0;
+}
+
+a,
+p {
+    color: black;
+}
+
+.container {
+    z-index: 0;
+    max-width: 550px;
+    height: 500px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(rgba(255, 128, 161, 1), rgba(255, 79, 125, 0));
+    position: relative;
+    -webkit-box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
+    box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
+}
+
+
+.container::after {
+    content: "";
+    background-image: url("../images/sisters_statue.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain; 
+    background-position: bottom; 
+    -webkit-box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
+    box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
+    z-index: -1; 
+    opacity: 1;
 }
 
 .title{
@@ -12,14 +55,84 @@ hr{
     font-size: 60px;
     color: black;
     opacity: 0.6;
+    margin: 0;
 }
 
-.subtitle{
+
+.header-bar{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.header-bar a{
     font-family: 'Roboto Mono', monospace;
     font-size: 15px;
+    color: black;
+    text-decoration: none;
+    opacity: 0.6;
 }
-
 
 input::placeholder {
     font-family: 'Courier Prime', monospace;
+  }
+
+input{
+    background-color:#ffffff;
+    filter:drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
+    border-radius:4px;
+    border: 5px solid #000000;
+}
+
+.button-div{
+    display: flex;
+    justify-content: center;
+}
+.prm-button {
+    display: flex;
+    justify-content: center; /* Center-align text */
+    background-color: #FF4F7D;
+    font-family: 'Courier Prime', monospace;
+    color: black;
+    padding: 10px 20px;
+    border: 3px solid black;
+    border-radius: 6px;
+    width: 30%;
+    font-size: 16px;
+    text-decoration: none; /* Remove the default underline from links */
+    box-shadow: 6px 6px 0px black, 6px 6px 0px black;
+  }
+  
+  .prm-button:hover {
+    background-color: #FF809F;
+  }
+  
+  .prm-button:focus {
+    outline: none;
+  }
+
+
+.scnd-button {
+    display: flex;
+    justify-content: center; /* Center-align text */
+    background-color: #FF4F7D;
+    font-family: 'Courier Prime', monospace;
+    color: black;
+    padding: 10px 20px;
+    border: 3px solid black;
+    border-radius: 6px;
+    width: 80%;
+    font-size: 16px;
+    text-decoration: none; /* Remove the default underline from links */
+    position: relative;
+    left: 5%;
+    box-shadow: 6px 6px 0px black, 6px 6px 0px black;
+  }
+  
+  .scnd-button:hover {
+    background-color: #FF809F;
+  }
+  
+  .scnd-button:focus {
+    outline: none;
   }

@@ -3,8 +3,12 @@
 {% block content %}
 
 <div class="header-bar">
-    <h1 class="title" >Register</h1>
+    <div>
+      <h1 class="title" >Register</h1>
+      <h3 class="subtitle">Register your account.</h3>
+    </div>
 </div>
+<hr>
 
 <div class="card-body">
     <form method="POST">
@@ -17,7 +21,9 @@
 
         <label>{{form.password2.label}}</label>
         {{form.password2}}
-        <input style="margin-top:10px ;" class="button" type="submit" value="Register">
+        <div class="button-div">
+            <input class="prm-button" type="submit" value="Register">
+        </div>
     </form>
     <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
 </div>

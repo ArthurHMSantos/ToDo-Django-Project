@@ -1,23 +1,29 @@
 {% extends 'ToDo_App\main.html' %}
 {% block content %}
+  
+<div class="header-bar">
+  <div>
+    <h1 class="title" >Login</h1>
+    <h3 class="subtitle">Login into your account.</h3>
+  </div>
+</div>
 
-<!DOCTYPE html>
-<html lang="en">
-<body>
-    <div class="header">
-        <H1 class="title" >Login</H1>
-        <p class="subtitle">Login into your account.</p>
-    </div>
-    <hr>
-    <form action="" method="post">
-        {% csrf_token %}
+<hr>
+<div class="card-body">
+  <form method="post">
+    {% csrf_token %}
 
-        {{form.username}}
-        {{form.password}}
-        <input type="submit" value="login">
-    </form>
+    {{form.username}}
+    {{form.password}}
+    <div class="button-div">
+      <input class="prm-button" type="submit" value="login">
     </div>
-    <p>No account? Register Here:</p><a href="{% url 'register' %}">Register</a>
-</body>
-</html>
+
+</form>
+</div>
+<p class="subtitle">No account? Register here:</p><a href="{% url 'register' %}">Register</a>
+
+
+</div>
+
 {% endblock content %}
