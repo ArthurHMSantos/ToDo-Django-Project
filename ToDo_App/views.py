@@ -8,7 +8,7 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
-from .forms import CustomLoginForm
+from .forms import CustomLoginForm, CustomSignupForm
 from .models import Task
 
 
@@ -16,20 +16,22 @@ from .models import Task
 
 class Register(FormView):
     template_name = 'ToDo_App/register.html'
-    form_class = UserCreationForm
+    form_class = CustomSignupForm
     redirect_authenticated_user = True
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
-        user = form.save()
-        if user is not None:
-            login(self.request, user)
+        user = form.save(commit=False)
+        user.set_password(form.cleaned_data['password1'])
+        user.save()
+        login(self.request, user)
         return super(Register, self).form_valid(form)
 
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
             return redirect('tasks')
         return super(Register, self).get(*args, **kwargs)
+
 
 
 class Login(LoginView):

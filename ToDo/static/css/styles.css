@@ -19,6 +19,7 @@ p {
 }
 
 .container {
+    border: 1px solid black;
     z-index: 0;
     max-width: 550px;
     height: 500px;
@@ -78,10 +79,15 @@ input::placeholder {
   }
 
 input{
+    display: flex;
     background-color:#ffffff;
+    padding: 2% 60% 2% 2%;
+    margin-bottom: 5%;
+    margin-top: 5%;
     filter:drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
     border-radius:4px;
-    border: 5px solid #000000;
+    border: 3px solid black;
+    box-shadow: 6px 6px 0px black, 6px 6px 0px black;
 }
 
 .button-div{
