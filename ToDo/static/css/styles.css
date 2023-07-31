@@ -75,95 +75,6 @@ p {
 }
 
 
-.delete-popup-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent background */
-    z-index: 999;
-    /* Make sure the delete popup appears above other elements */
-}
-
-.delete-popup-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("../images/delete_statues.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 10px;
-    /* Adjust the border radius as needed to match your delete popup content */
-    opacity: 0.8;
-    /* Adjust the opacity as needed to make the image semi-transparent */
-    z-index: -1;
-}
-
-/* Add this style to center the delete popup content */
-.delete-popup-content {
-    max-width: 400px;
-    /* Adjust the width as needed */
-    padding: 20px;
-    background-color: #fff;
-    /* White background */
-    border-radius: 10px;
-    /* Adjust the border radius as needed to match your delete popup content */
-}
-/* Add this style to center the delete popup title */
-.delete-popup-title {
-    font-family: 'Courier Prime', monospace;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-/* Add this style to center the delete popup buttons */
-.delete-popup-buttons {
-    display: flex;
-    justify-content: space-between;
-}
-
-/* Add this style to style the delete and cancel buttons */
-.delete-popup-buttons button[type="submit"],
-.delete-popup-buttons a {
-    font-family: 'Courier Prime', monospace;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: 3px solid black;
-    background-color: #F7B7C8;
-    border-radius: 6px;
-    text-decoration: none;
-    box-shadow: 6px 6px 0px black, 6px 6px 0px black;
-}
-
-.delete-popup-buttons button[type="submit"]:hover,
-.delete-popup-buttons a:hover {
-    background-color: #FF809F;
-}
-
-
-.delete-popup-message {
-    font-family: 'Courier Prime', monospace;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Add this style to make 'forever' pink */
-.forever-pink {
-    color: #FF4F7D;
-    /* Pink color */
-}
-
 .title {
     font-family: 'Fascinate', cursive;
     font-size: 60px;
@@ -216,7 +127,7 @@ p {
     align-items: center;
     justify-content: space-between;
     padding: 15px;
-    background-color: rgb(226, 226, 226, 0.4);
+    background-color: rgb(226, 226, 226, 0.8);
     border: 2px solid rgb(0, 0, 0);
     border-radius: 5px;
     margin-bottom: 10px;
@@ -362,4 +273,82 @@ input:focus {
 
 label {
     font-family: 'Courier Prime', monospace;
+}
+.delete-popup-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Add this style to center the delete popup content */
+.delete-popup-content {
+    border: 2px solid black;
+    border-radius: 4px;
+    max-width: 400px;
+    /* Adjust the width as needed */
+    background-color: #ffffff;
+    /* White background */
+    border-radius: 10px;
+}
+
+.bg-image{
+    background-image: url("../images/delete_pop.png");
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+/* Add this style to center the delete popup title */
+.delete-popup-title {
+    font-family: 'Courier Prime', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Add this style to center the delete popup buttons */
+.delete-popup-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Add this style to style the delete and cancel buttons */
+.delete-popup-buttons button[type="submit"],
+.delete-popup-buttons a {
+    font-family: 'Courier Prime', monospace;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 3px solid black;
+    background-color: #F7B7C8;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 6px 6px 0px black, 6px 6px 0px black;
+}
+
+.delete-popup-buttons button[type="submit"]:hover,
+.delete-popup-buttons a:hover {
+    background-color: #FF809F;
+}
+
+.content-wrappper{
+    padding: 20px;
+}
+.delete-popup-message {
+    font-family: 'Courier Prime', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Add this style to make 'forever' pink */
+.forever-pink {
+    color: #FF4F7D;
+    /* Pink color */
 }
