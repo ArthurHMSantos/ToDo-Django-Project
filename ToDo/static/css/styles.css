@@ -1,5 +1,28 @@
+input::placeholder {
+    font-family: 'Courier Prime', monospace;
+}
+
+input {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 900;
+    display: flex;
+    background-color: #ffffff;
+    width: 36%;
+    padding: 2% 60% 2% 2%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 4px;
+    border: 3px solid black;
+    box-shadow: 6px 6px 0px black, 6px 6px 0px black;
+}
+
+/* input[type="checkbox"] {
+    box-shadow: none;
+  } */
+
 body {
-    background-color: #fafafa9a;
+    background-color: #332b2b2d;
     padding-top: 20px;
 }
 
@@ -88,7 +111,6 @@ p {
     background-size: cover;
     background-position: center;
     background-color: rgba(255, 255, 255, 0.1);
-    /* Set the background color with desired opacity */
     padding: 10px 15px;
     width: 70%;
     border-radius: 5px;
@@ -104,11 +126,10 @@ p {
     align-items: center;
     justify-content: space-between;
     padding: 15px;
-    background-color: rgb(226, 226, 226, 0.2);
+    background-color: rgb(226, 226, 226, 0.4);
     border: 2px solid rgb(0, 0, 0);
     border-radius: 5px;
     margin-bottom: 10px;
-    /* Add margin at the bottom of each task */
 }
 
 .task-title {
@@ -119,30 +140,25 @@ p {
 .task-title a {
     text-decoration: none;
     color: #000000;
-    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .task-complete-icon{
     height: 20px;
     width: 20px;
-    background-color: green;
+    background-color: #FF4F7D;
+    border: 2px solid black;
     border-radius: 50%;
-}
-
-.task-complete-icon:hover{
-    background-color: #00ff00;
 }
 
 .task-incomplete-icon{
     height: 20px;
     width: 20px;
     background-color: rgb(197, 168, 168);
+    border: 2px solid black;
     border-radius: 50%;
 }
 
-.task-incomplete-icon:hover{
-    background-color: #4d4747;
-}
 
 .delete-link {
     display: flex;
@@ -152,34 +168,30 @@ p {
 
 .delete_icon {
     width: 20px;
-    /* Adjust the width to your desired size */
     height: 20px;
-    /* Adjust the height to your desired size */
     margin-left: 10px;
-    /* Add some spacing between the task text and the delete icon */
 }
 
 
-input::placeholder {
-    font-family: 'Courier Prime', monospace;
-}
 
-input {
-    display: flex;
-    background-color: #ffffff;
-    padding: 2% 60% 2% 2%;
-    margin-bottom: 5%;
-    margin-top: 5%;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 4px;
-    border: 3px solid black;
-    box-shadow: 6px 6px 0px black, 6px 6px 0px black;
+.username-image-field {
+    background-image: url("../images/username_statue.png");
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
 
-}
+  .password-image-field {
+    background-image: url("../images/password_statue.png");
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
 
 .button-div {
     display: flex;
     justify-content: center;
+    gap: 20px;
 }
 
 .prm-button {
@@ -204,9 +216,6 @@ input {
     background-color: #FF809F;
 }
 
-
-
-
 .scnd-button {
     display: flex;
     justify-content: center;
@@ -229,8 +238,38 @@ input {
     background-color: #FF809F;
 }
 
+.description-field:focus,
 .prm-button:focus,
 .scnd-button:focus,
 input:focus {
     outline: none;
+}
+
+.description-field{
+    font-family: 'Courier Prime', monospace;
+    display: flex;
+    background-color: #ffffff;
+    width: 36%;
+    padding: 2% 60% 2% 2%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 4px;
+    border: 3px solid black;
+    box-shadow: 6px 6px 0px black, 6px 6px 0px black;
+}
+
+.completed-field{
+    font-family: 'Courier Prime', monospace;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    box-shadow: none;
+}
+
+label{
+    font-family: 'Courier Prime', monospace;
 }

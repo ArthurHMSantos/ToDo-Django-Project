@@ -1,18 +1,15 @@
-from typing import Any, Dict
-from django.forms.models import BaseModelForm
-from django.http import HttpRequest, HttpResponse
-from django.shortcuts import redirect, render
+from django import forms
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, FormView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
-from .forms import CustomLoginForm, CustomSignupForm
+from .forms import CustomLoginForm, CustomSignupForm, CustomTaskCreateForm
 from .models import Task
 
-
 # Create your views here.
+
 
 class Register(FormView):
     template_name = 'ToDo_App/register.html'
@@ -71,18 +68,17 @@ class TaskDetail(LoginRequiredMixin, DetailView):
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
     template_name = 'ToDo_App/task_form.html'
-    fields = ['title', 'description', 'completed']
+    form_class = CustomTaskCreateForm
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(TaskCreate, self).form_valid(form)
 
-
 class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Task
-    fields = ['title', 'description', 'completed']
-    template_name = 'ToDo_App/task_form.html'
+    template_name = 'ToDo_App/task_update.html'
+    form_class = CustomTaskCreateForm
     success_url = reverse_lazy('home')
 
 
