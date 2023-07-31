@@ -1,21 +1,21 @@
-{% extends 'ToDo_App\main.html' %}
-{% block content %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Task</title>
-</head>
-<body>
-
-    <form action="" method="post">
+{% load static %}
+<script src="\static\js\popup.js"></script>
+<div class="delete-popup-container">
+    <div class="delete-popup-background"></div>
+    <div class="delete-popup-content">
+      <p class="delete-popup-message">
+        This will be lost;<br>
+        <span class="forever-pink">forever.</span><br>
+        Are you sure?<br>
+        Be careful.<br>
+        This cannot be undone.
+      </p>
+      <form action="{% url 'task_delete' task.id %}" method="post">
         {% csrf_token %}
-        <p>Delete the task? </p>
-        <input type="submit" value="Delete">
-    </form>
-    <a href="{% url 'home' %}">Cancel</a>
-</body>
-</html>
-{% endblock content %}
+        <div class="delete-popup-buttons">
+          <button  class="prm-button" type="submit" >Yes</button>
+          <a  class="prm-button" href="{% url 'home' %}">No</a>
+        </div>
+      </form>
+    </div>
+  </div>

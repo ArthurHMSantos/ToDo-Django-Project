@@ -74,6 +74,96 @@ p {
     opacity: 1;
 }
 
+
+.delete-popup-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    z-index: 999;
+    /* Make sure the delete popup appears above other elements */
+}
+
+.delete-popup-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/delete_statues.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    /* Adjust the border radius as needed to match your delete popup content */
+    opacity: 0.8;
+    /* Adjust the opacity as needed to make the image semi-transparent */
+    z-index: -1;
+}
+
+/* Add this style to center the delete popup content */
+.delete-popup-content {
+    max-width: 400px;
+    /* Adjust the width as needed */
+    padding: 20px;
+    background-color: #fff;
+    /* White background */
+    border-radius: 10px;
+    /* Adjust the border radius as needed to match your delete popup content */
+}
+/* Add this style to center the delete popup title */
+.delete-popup-title {
+    font-family: 'Courier Prime', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Add this style to center the delete popup buttons */
+.delete-popup-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Add this style to style the delete and cancel buttons */
+.delete-popup-buttons button[type="submit"],
+.delete-popup-buttons a {
+    font-family: 'Courier Prime', monospace;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 3px solid black;
+    background-color: #F7B7C8;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 6px 6px 0px black, 6px 6px 0px black;
+}
+
+.delete-popup-buttons button[type="submit"]:hover,
+.delete-popup-buttons a:hover {
+    background-color: #FF809F;
+}
+
+
+.delete-popup-message {
+    font-family: 'Courier Prime', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Add this style to make 'forever' pink */
+.forever-pink {
+    color: #FF4F7D;
+    /* Pink color */
+}
+
 .title {
     font-family: 'Fascinate', cursive;
     font-size: 60px;
@@ -143,7 +233,7 @@ p {
     margin-left: 10px;
 }
 
-.task-complete-icon{
+.task-complete-icon {
     height: 20px;
     width: 20px;
     background-color: #FF4F7D;
@@ -151,7 +241,7 @@ p {
     border-radius: 50%;
 }
 
-.task-incomplete-icon{
+.task-incomplete-icon {
     height: 20px;
     width: 20px;
     background-color: rgb(197, 168, 168);
@@ -179,14 +269,14 @@ p {
     background-size: 30px;
     background-repeat: no-repeat;
     background-position: right center;
-  }
+}
 
-  .password-image-field {
+.password-image-field {
     background-image: url("../images/password_statue.png");
     background-size: 30px;
     background-repeat: no-repeat;
     background-position: right center;
-  }
+}
 
 .button-div {
     display: flex;
@@ -245,7 +335,7 @@ input:focus {
     outline: none;
 }
 
-.description-field{
+.description-field {
     font-family: 'Courier Prime', monospace;
     display: flex;
     background-color: #ffffff;
@@ -259,7 +349,7 @@ input:focus {
     box-shadow: 6px 6px 0px black, 6px 6px 0px black;
 }
 
-.completed-field{
+.completed-field {
     font-family: 'Courier Prime', monospace;
     font-weight: bold;
     display: inline-flex;
@@ -270,6 +360,6 @@ input:focus {
     box-shadow: none;
 }
 
-label{
+label {
     font-family: 'Courier Prime', monospace;
 }
