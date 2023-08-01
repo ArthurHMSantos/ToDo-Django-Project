@@ -17,15 +17,15 @@ input {
     box-shadow: 6px 6px 0px black, 6px 6px 0px black;
 }
 
-/* input[type="checkbox"] {
-    box-shadow: none;
-  } */
-
 body {
-    background-color: #332b2b2d;
     padding-top: 20px;
+    background-image: url("../images/background-image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
 }
-
 hr {
     border: 1px solid #000000;
 }
@@ -189,6 +189,13 @@ p {
     background-position: right center;
 }
 
+.password2-image-field {
+    background-image: url("../images/password_statue.png");
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
 .button-div {
     display: flex;
     justify-content: center;
@@ -209,7 +216,7 @@ p {
     width: 30%;
     font-size: 16px;
     text-decoration: none;
-    /* Remove the default underline from links */
+    cursor: pointer;
     box-shadow: 6px 6px 0px black, 6px 6px 0px black;
 }
 
@@ -218,6 +225,7 @@ p {
 }
 
 .scnd-button {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     /* Center-align text */
@@ -274,6 +282,7 @@ input:focus {
 label {
     font-family: 'Courier Prime', monospace;
 }
+
 .delete-popup-container {
     display: flex;
     align-items: center;
@@ -287,14 +296,11 @@ label {
     z-index: 999;
 }
 
-/* Add this style to center the delete popup content */
 .delete-popup-content {
     border: 2px solid black;
     border-radius: 4px;
     max-width: 400px;
-    /* Adjust the width as needed */
     background-color: #ffffff;
-    /* White background */
     border-radius: 10px;
 }
 
@@ -304,7 +310,7 @@ label {
     background-repeat: no-repeat;
     background-position: bottom;
 }
-/* Add this style to center the delete popup title */
+
 .delete-popup-title {
     font-family: 'Courier Prime', monospace;
     font-size: 18px;
@@ -312,13 +318,11 @@ label {
     margin-bottom: 10px;
 }
 
-/* Add this style to center the delete popup buttons */
 .delete-popup-buttons {
     display: flex;
     justify-content: space-around;
 }
 
-/* Add this style to style the delete and cancel buttons */
 .delete-popup-buttons button[type="submit"],
 .delete-popup-buttons a {
     font-family: 'Courier Prime', monospace;
@@ -347,7 +351,6 @@ label {
     margin-bottom: 20px;
 }
 
-/* Add this style to make 'forever' pink */
 .forever-pink {
     color: #FF4F7D;
     /* Pink color */

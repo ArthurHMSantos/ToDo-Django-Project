@@ -13,7 +13,8 @@
 <div class="card-body">
     <form method="POST" action="">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.title}}
+        {{ form.description}}
         <div class="button-div">
             <button class="prm-button" type="submit" value="Submit">Submit</button>
             <a class="prm-button" href="{% url 'home' %}">Cancel</a>

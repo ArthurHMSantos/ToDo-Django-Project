@@ -10,7 +10,7 @@ class CustomLoginForm(AuthenticationForm):
 class CustomSignupForm(UserCreationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username',  'class': 'username-image-field'}))
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password', 'class': 'password-image-field'}))
-    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password', 'class': 'password-image-field'}))
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password', 'class': 'password2-image-field'}))
 
 class CustomTaskCreateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
