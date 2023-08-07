@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-&s&2bw+grjm6j50ga1akvk^k=87666y0m+7c7g-qie3z31+idc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['todo-cd9q.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['todo-cd9q.onrender.com', 'localhost', '127.0.0.1', '.vercel.app', '.now-sh']
 
 
 # Application definition
@@ -119,7 +119,8 @@ LOGIN_URL = 'login'
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = ['ToDo/static']
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'ToDo/static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'ToDo/static')
 
 
 # Default primary key field type
